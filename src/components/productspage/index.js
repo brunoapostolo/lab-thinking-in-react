@@ -6,11 +6,21 @@ import ProductsTable from '../productsTable';
 function ProductsPage() {
   const [products, setProducts] = useState(jsonData);
   const [pesquisa, setSearch] = useState('');
+  const [checkBox, setCheckBox] = useState(false);
   return (
     <div>
       <h1>IronStore</h1>
-      <SearchBar pesquisa={pesquisa} setSearch={setSearch} />
-      <ProductsTable products={products} pesquisa={pesquisa}></ProductsTable>
+      <SearchBar
+        pesquisa={pesquisa}
+        setSearch={setSearch}
+        checkBox={checkBox}
+        setCheckBox={setCheckBox}
+      />
+      <ProductsTable
+        products={products}
+        pesquisa={pesquisa}
+        checkBox={checkBox}
+      ></ProductsTable>
     </div>
   );
 }
